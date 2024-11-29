@@ -384,5 +384,7 @@ a.button:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 300px;
+  gap: 100px;
+  margin-left: 400px;
+  margin-right: 400px;
 }
