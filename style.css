@@ -554,3 +554,77 @@ a.button:hover {
     margin: 10px 0 0 0;
   }
 }
+
+
+
+/* Services part Code */
+
+.container-s{
+  height: 100%;
+  padding-top: 30px;
+  width: 80%;
+  margin-left: 50%;
+  transform: translate(-50%,-50%);
+  margin-top: 35%;
+  margin-right: 20%;
+  margin-bottom: -500px;
+}
+
+.container-s h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 35px;
+  margin-bottom: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container-s .services{
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container-s .services .card{
+  width: 330px;
+  text-align: center;
+  background: #222;
+  padding: 20px 15px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.container-s .services .card:hover{
+  background: blueviolet;
+}
+
+.container-s .services .card .content{
+  transition: 0.3s;
+}
+
+.container-s .services .card:hover .content{
+  transform: scale(1.07);
+}
+
+.container-s .services .card .content .icon{
+  padding: 5px 0;
+  color: white;
+}
+
+.container-s .services .card .content .icon i{
+  font-size: 40px;
+}
+
+.container-s .services .card:hover .content .title{
+  color: white;
+}
+
+.container-s .services .card .content .title{
+  padding: 5px 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: blueviolet;
+  transition: 0.3s;
+}
