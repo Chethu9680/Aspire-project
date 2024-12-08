@@ -1,0 +1,555 @@
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ===== Reset some default styles ===== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== VARIABLES ===== */
+:root{
+    --bg-color: #fff;
+    --primary-color: #000000;
+    --second-color: #196FE0;
+    --hover-bg-color: #efefef;
+    --shadow-1: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-2: 0px 2px 10px rgba(26, 112, 224, 0.4);
+}
+/* ===== BODY ===== */
+body{
+    background: url("../img/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ===== Reusable CSS ===== */
+a{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+ul{
+    list-style-type: none;
+}
+
+/* ===== Menu Toggle ===== */
+.menu-toggle{
+    display: none;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* ===== Navigation Bar ===== */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 3vw;
+    height: 90px;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    z-index: 999;
+    color: #fff;
+}
+.logo h1{
+    font-weight: 600;
+    z-index: 999;
+}
+.logo{
+  z-index: 999;
+}
+.nav-main-menu{
+    display: flex;
+    z-index: 999;
+}
+.nav-link{
+    padding: 26px 10px;
+    margin-inline: 10px;
+    transition: .3s;
+    color: #fff;
+    z-index: 999;
+}
+.nav-link:hover{
+    color: var(--second-color);
+}
+.nav span{
+    margin-right: 5px;
+}
+.fa-chevron-down, .fa-chevron-right{
+    font-size: 12px;
+    transition: .3s;
+    
+}
+
+.dropdown:hover .fa-chevron-down, .sub-dropdown:hover .fa-chevron-right{
+    transform: rotate(180deg);
+}
+.dropdown:hover .nav-link{
+    color: var(--second-color);
+}
+
+/* ===== Dropdown ===== */
+.dropdown{
+    position: relative;
+    z-index: 999;
+}
+.nav-main-menu .dropdown-content{
+    display: none;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    background: var(--bg-color);
+    min-width: 240px;
+    border-top: 3px solid #ccc;
+    border-radius: 0 0 3px 3px;
+    animation: slideUp .3s;
+}
+.dropdown-content li{
+    padding: 10px;
+}
+.dropdown-content li:hover{
+    background: var(--hover-bg-color);
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+/* ===== Sub - Dropdown ===== */
+.nav-main-menu .sub-dropdown-content{
+   display: none;
+   position: absolute;
+   top: 34%;
+   left: 100%;
+   background: var(--bg-color);
+   min-width: 240px;
+   border-top: 3px solid #ccc;
+   border-radius: 3px;
+   animation: slideUp .3s;
+   box-shadow: var(--shadow-1);
+}
+@keyframes slideUp {
+    from{
+        margin-top: 20px;
+    }
+    to{
+        margin-top: 0;
+    }
+}
+.dropdown-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sub-dropdown:hover .sub-dropdown-content{
+    display: block;
+}
+.btn{
+    font-size: 15px;
+    background-color: black;
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-2);
+    cursor: pointer;
+    transition: .3s;
+    z-index: 999;
+}
+.btn:hover{
+    opacity: 0.9;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    color: var(--bg-color);
+    padding: 20px;
+}
+main p{
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+/* ===== Responsive styles ===== */
+
+@media only screen and (max-width: 794px){
+    .nav-main-menu{
+        display: none;
+    }
+    .menu-toggle{
+        display: block;
+    }
+}
+
+/* Styles for sliding images */
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+.main {
+  height: 100vh;
+  width: 100%;
+  margin-top: -100px;
+}
+
+.wrapper,
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  overflow: hidden;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.slide .image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slide .image-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+.image-data span.text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.image-data h2 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #fff;
+}
+
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #333;
+  background: #fff;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+
+a.button:hover {
+  color: #fff;
+  background-color: #c87e4f;
+}
+
+/* swiper button css */
+.nav-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.swiper-button-next {
+  right: 50px;
+}
+
+.swiper-button-prev {
+  left: 50px;
+}
+
+.nav-btn::before,
+.nav-btn::after {
+  font-size: 25px;
+  color: #fff;
+}
+
+.swiper-pagination-bullet {
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  visibility: hidden;
+}
+
+.swiper-pagination-bullet-active {
+  border: 2px solid #fff;
+  background-color: #c87e4f;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    visibility: hidden;
+  }
+
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+}
+
+/* welcome user code styles */
+
+
+/* Welcome Section */
+.welcome-message {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* About Text */
+.about-text {
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 90%;
+  margin-left: 100px;
+}
+
+/* Contact Us Button */
+.contact-button {
+    display: inline-block;
+  position: relative;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid orange;
+  color: orange;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s, border-color 0.3s;
+  /* margin-top: 20px;
+  margin-left: 45%; */
+  /* display: grid;
+  place-self: center; */
+  margin-left: 20px;
+  margin-top: 5vh;
+  border-radius: 30px;
+}
+.button-con{
+    display: inline-flex;
+    margin-left: 30vw;
+    margin-bottom: 5vh;
+    margin-right: 30vw;
+    
+}
+
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 255, 0.325);
+  transition: left 0.3s;
+}
+
+.contact-button:hover {
+  color: black;
+  border-color: blue;
+  z-index: 10;
+}
+
+.contact-button:hover::before {
+  left: 0;
+}
+.boxes{
+  width: 250px;
+  height: 250px;
+  border: 2px solid rgba(0, 0, 255, 0.494);
+  border-radius: 30px;
+}
+.box-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-left: 400px;
+  margin-right: 250px;
+}
+
+/* web design parts code */
+.parts{
+    display: inline-flex;
+}
+.side1{
+    display: inline-block;
+    max-width: 800px;
+    font-size: 1.5rem;
+    color: #000000;
+    margin-left: 5vw;
+    border: 5px solid whitesmoke;
+}
+.side2{
+    max-width: 200px;
+    object-fit: contain;
+    display: inline-block;
+    margin-top: 10vh;
+}
+
+
+/* Footer code styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+
+.footer {
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  /* max-width: 1280px; */
+  width: 100%;
+  background: #10182F;
+  border-radius: 6px;
+}
+
+.footer .footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3.5rem;
+  padding: 60px;
+}
+
+.footer-row .footer-col h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.footer-col .links {
+  margin-top: 20px;
+}
+
+.footer-col .links li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.footer-col .links li a {
+  text-decoration: none;
+  color: #bfbfbf;
+}
+
+.footer-col .links li a:hover {
+  color: #fff;
+}
+
+.footer-col p {
+  margin: 20px 0;
+  color: #bfbfbf;
+  max-width: 300px;
+}
+
+.footer-col form {
+  display: flex;
+  gap: 5px;
+}
+
+.footer-col input {
+  height: 40px;
+  border-radius: 6px;
+  background: none;
+  width: 100%;
+  outline: none;
+  border: 1px solid #7489C6 ;
+  caret-color: #fff;
+  color: #fff;
+  padding-left: 10px;
+}
+
+.footer-col input::placeholder {
+  color: #ccc;
+}
+
+ .footer-col form button {
+  background: #fff;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.footer-col form button:hover {
+  background: #cecccc;
+}
+
+.footer-col .icons {
+  display: flex;
+  margin-top: 30px;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.footer-col .icons i {
+  color: #afb6c7;
+}
+
+.footer-col .icons i:hover  {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .footer .footer-row {
+    padding: 20px;
+    gap: 1rem;
+  }
+
+  .footer-col form {
+    display: block;
+  }
+
+  .footer-col form :where(input, button) {
+    width: 100%;
+  }
+
+  .footer-col form button {
+    margin: 10px 0 0 0;
+  }
+}
